@@ -1,5 +1,6 @@
 package bo.ucb.edu.ingsoft.api;
 
+import bo.ucb.edu.ingsoft.bl.TransactionBl;
 import bo.ucb.edu.ingsoft.bl.UserBl;
 import bo.ucb.edu.ingsoft.dto.UserDto;
 import bo.ucb.edu.ingsoft.model.Transaction;
@@ -24,7 +25,7 @@ public class UserApi {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserApi.class);
 
     @Autowired
-    public UserApi(UserBl userBl, TranasactionBl tranasactionBl){
+    public UserApi(UserBl userBl, TransactionBl transactionBl){
         this.userBl = userBl;
         this.transactionBl = transactionBl;
     }
