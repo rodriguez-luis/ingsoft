@@ -5,5 +5,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface UserDao {
  public void create (User user);
- public User findById ();
+ public User findById (Integer userId);
 }

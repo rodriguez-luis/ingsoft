@@ -6,7 +6,7 @@ public class User {
     private Integer userId;
     private String username;
     private String password;
-    private String name;
+    private String firstName;
     private String lastName;
     private String email;
     private Integer privilege;
@@ -37,12 +37,12 @@ public class User {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {

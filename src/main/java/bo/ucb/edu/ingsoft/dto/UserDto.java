@@ -8,7 +8,7 @@ public class UserDto {
     private Integer userId;
     private String username;
     private String password;
-    private String name;
+    private String firstName;
     private String lastName;
     private String email;
     private Integer privilege;
@@ -37,12 +37,12 @@ public class UserDto {
         this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String name) {
+        this.firstName = name;
     }
 
     public String getLastName() {

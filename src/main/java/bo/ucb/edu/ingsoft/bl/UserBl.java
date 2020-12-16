@@ -4,6 +4,7 @@ import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.dao.UserDao;
 import bo.ucb.edu.ingsoft.dto.UserDto;
 import bo.ucb.edu.ingsoft.model.Transaction;
+import bo.ucb.edu.ingsoft.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +19,16 @@ public class UserBl {
         this.userDao = userDao;
     }
     public UserDto getById(Integer userId){
-        return new UserDto();
+        User user = userDao.findById(userId);
+        UserDto userResponse = new UserDto();
+        userResponse.setUserId(user.getUserId());
+        userResponse.setUsername(user.getUsername());
+        userResponse.setPassword(user.getPassword());
+        userResponse.setFirstName(user.getFirstName());
+        userResponse.setLastName(user.getLastName());
+        userResponse.setEmail(user.getEmail());
+        userResponse.setPrivilege(user.getPrivilege());
+        return userResponse;
     }
     public UserDto create(UserDto userDto, Transaction transaction){
         return new UserDto();
