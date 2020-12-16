@@ -31,6 +31,22 @@ public class UserBl {
         return userResponse;
     }
     public UserDto create(UserDto userDto, Transaction transaction){
-        return new UserDto();
+        User user =new User();
+        user.setUserId(userDto.getUserId());
+        user.setUsername(userDto.getUsername());
+        user.setPassword(userDto.getPassword());
+        user.setFirstName(userDto.getFirstName());
+        user.setLastName(userDto.getLastName());
+        user.setEmail(userDto.getEmail());
+        user.setPrivilege(userDto.getPrivilege());
+        user.setStatus(1);
+        user.setTxId(transaction.getTxId());
+        user.setTxHost(transaction.getTxHost());
+        user.setTxUserId(transaction.getTxUserId());
+        user.setTxDate(transaction.getTxDate());
+        userDao.create(user);
+        Integer id = transactionDao.getLastInsertId();
+        userDto.setUserId(id);
+        return userDto;
     }
 }

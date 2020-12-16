@@ -37,7 +37,7 @@ public class UserDto {
         this.password = password;
     }
 
-    public String getUserName() {
+    public String getFirstName() {
         return firstName;
     }
 
