@@ -18,10 +18,9 @@ public class UserBl {
         this.transactionDao = transactionDao;
         this.userDao = userDao;
     }
-    public UserDto getById(Integer userId){
-        User user = userDao.findById(userId);
+    public UserDto getByUsername(String username){
+        User user = userDao.findByUsername(username);
         UserDto userResponse = new UserDto();
-        userResponse.setUserId(user.getUserId());
         userResponse.setUsername(user.getUsername());
         userResponse.setPassword(user.getPassword());
         userResponse.setFirstName(user.getFirstName());
@@ -32,7 +31,6 @@ public class UserBl {
     }
     public UserDto create(UserDto userDto, Transaction transaction){
         User user =new User();
-        user.setUserId(userDto.getUserId());
         user.setUsername(userDto.getUsername());
         user.setPassword(userDto.getPassword());
         user.setFirstName(userDto.getFirstName());
@@ -45,8 +43,6 @@ public class UserBl {
         user.setTxUserId(transaction.getTxUserId());
         user.setTxDate(transaction.getTxDate());
         userDao.create(user);
-        Integer id = transactionDao.getLastInsertId();
-        userDto.setUserId(id);
         return userDto;
     }
 }

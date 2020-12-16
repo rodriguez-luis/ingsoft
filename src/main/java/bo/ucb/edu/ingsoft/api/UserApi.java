@@ -30,9 +30,9 @@ public class UserApi {
         this.transactionBl = transactionBl;
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public UserDto getUser(@PathVariable("id") Integer id, HttpServletRequest request){
-        return this.userBl.getById(id);
+    @RequestMapping(value = "/{username}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public UserDto getUser(@PathVariable("username") String username, HttpServletRequest request){
+        return this.userBl.getByUsername(username);
     }
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public UserDto postUser (@RequestBody UserDto userDto, HttpServletRequest request){
