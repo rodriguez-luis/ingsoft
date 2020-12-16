@@ -1,0 +1,17 @@
+GET http://localhost:8080/v1/user/2
+Accept: application/json
+
+###
+POST http://localhost:8080/v1/user
+Content-Type: application/json
+
+{
+  "username": "luisito",
+  "password": "12345",
+  "firstName": "Luis",
+  "lastName": "Rodriguez",
+  "email": "example@gmail.com",
+  "privilege": 1
+}
+
+###

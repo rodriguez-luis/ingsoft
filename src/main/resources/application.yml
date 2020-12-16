@@ -4,9 +4,9 @@ spring:
   datasource:
     name: demo_mysql_db
     platform: mysql
-    url: jdbc:mysql://localhost:3306/agenda
+    url: jdbc:mysql://localhost:3306/store
     username: root
-    password: ABCabc123
+    password: 12345
     driver-class-name: com.mysql.jdbc.Driver
     hikari:
       connectionTestQuery: select 1

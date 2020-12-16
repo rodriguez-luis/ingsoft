@@ -13,6 +13,9 @@ public class User {
     private Integer status;
     private Transaction transaction;
 
+    public User() {
+        this.transaction= new Transaction();
+    }
     public Integer getUserId() {
         return userId;
     }

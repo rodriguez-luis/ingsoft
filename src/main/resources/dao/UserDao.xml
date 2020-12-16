@@ -19,6 +19,6 @@
     <insert id="create" parameterType="bo.ucb.edu.ingsoft.model.User">
         INSERT INTO user ( `username`, `password`, `first_name`, `last_name`, `email`, `privilege`, `status`, `tx_id`, `tx_host`, `tx_user_id`, `tx_date`)
         VALUES (
-                   #{username}, #{password}, #{first_name}, #{last_name},#{email}, #{privilege}, #{status}, #{txId}, #{txHost}, #{txUserId}, #{txDate})
+                   #{username}, #{password}, #{firstName}, #{lastName},#{email}, #{privilege}, #{status}, #{txId}, #{txHost}, #{txUserId}, #{txDate})
     </insert>
 </mapper>
