@@ -1,0 +1,15 @@
+GET http://localhost:8080/v1/cart/details/7
+Accept: application/json
+
+###
+POST http://localhost:8080/v1/cart/details
+Content-Type: application/json
+
+{
+  "productId": 1,
+  "cartId": 7,
+  "quantity": 1,
+  "price": 1000
+}
+
+###
