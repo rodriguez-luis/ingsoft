@@ -6,7 +6,7 @@ POST http://localhost:8080/v1/cart
 Content-Type: application/json
 
 {
-  "username": "luisito",
+  "username": "cliente",
   "cartStatus": 1
 }
 

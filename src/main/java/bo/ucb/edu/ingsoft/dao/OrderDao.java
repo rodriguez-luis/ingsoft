@@ -7,7 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface OrderDao {
-    public void create(Order order);
+    public void createOrder(Order order);
     public List<Order> getOrders();
-    public void update(Order order);
+    public void updateOrder(Order order);
 }

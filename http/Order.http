@@ -1,0 +1,19 @@
+GET http://localhost:8080/v1/order
+Accept: application/json
+
+###
+POST http://localhost:8080/v1/order
+Accept: application/json
+Content-Type: application/json
+
+{
+  "total": 1200,
+  "address": "esquina loa",
+  "cartId": 1,
+  "username": "cliente",
+  "deliveryBoy": "repartidor",
+  "orderStatus": 1
+}
+
+###
+

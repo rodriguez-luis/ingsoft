@@ -11,7 +11,7 @@ public class OrderDto {
     private String address;
     private Integer cartId;
     private String username;
-    private Integer deliveryBoy;
+    private String deliveryBoy;
     private Integer orderStatus;
 
     public OrderDto(){
@@ -65,11 +65,11 @@ public class OrderDto {
         this.username = username;
     }
 
-    public Integer getDeliveryBoy() {
+    public String getDeliveryBoy() {
         return deliveryBoy;
     }
 
-    public void setDeliveryBoy(Integer deliveryBoy) {
+    public void setDeliveryBoy(String deliveryBoy) {
         this.deliveryBoy = deliveryBoy;
     }
 

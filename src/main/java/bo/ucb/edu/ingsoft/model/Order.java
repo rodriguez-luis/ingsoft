@@ -9,7 +9,7 @@ public class Order {
     private String address;
     private Integer cartId;
     private String username;
-    private Integer deliveryBoy;
+    private String deliveryBoy;
     private Integer orderStatus;
     private Integer status;
     private Transaction transaction;
@@ -66,11 +66,11 @@ public class Order {
         this.username = username;
     }
 
-    public Integer getDeliveryBoy() {
+    public String getDeliveryBoy() {
         return deliveryBoy;
     }
 
-    public void setDeliveryBoy(Integer deliveryBoy) {
+    public void setDeliveryBoy(String deliveryBoy) {
         this.deliveryBoy = deliveryBoy;
     }
 
@@ -89,7 +89,9 @@ public class Order {
     public void setStatus(Integer status) {
         this.status = status;
     }
-
+    public Transaction getTransaction() {
+        return transaction;
+    }
     public void setTransaction(Transaction transaction) {
         this.transaction = transaction;
     }

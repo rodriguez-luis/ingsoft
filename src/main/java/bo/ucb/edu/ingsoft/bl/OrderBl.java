@@ -30,6 +30,7 @@ public class OrderBl {
             orderDto.setOrderId(order.getOrderId());
             orderDto.setDate(order.getDate());
             orderDto.setTotal(order.getTotal());
+            orderDto.setAddress(order.getAddress());
             orderDto.setCartId(order.getCartId());
             orderDto.setUsername(order.getUsername());
             orderDto.setDeliveryBoy(order.getDeliveryBoy());
@@ -40,8 +41,7 @@ public class OrderBl {
     }
     public OrderDto createOrder(OrderDto orderDto, Transaction transaction) {
         Order order = new Order();
-        order.setOrderId(orderDto.getOrderId());
-        order.setDate(orderDto.getDate());
+        order.setDate(transaction.getTxDate());
         order.setTotal(orderDto.getTotal());
         order.setAddress(orderDto.getAddress());
         order.setCartId(orderDto.getCartId());
@@ -53,7 +53,7 @@ public class OrderBl {
         order.setTxHost(transaction.getTxHost());
         order.setTxDate(transaction.getTxDate());
         order.setStatus(1);
-        orderDao.create(order);
+        orderDao.createOrder(order);
         Integer getLastId = transactionDao.getLastInsertId();
         orderDto.setOrderId(getLastId);
         return orderDto;
@@ -67,6 +67,6 @@ public class OrderBl {
         order.setTxUserId(transaction.getTxUserId());
         order.setTxHost(transaction.getTxHost());
         order.setTxDate(transaction.getTxDate());
-        orderDao.update(order);
+        orderDao.updateOrder(order);
     }
 }

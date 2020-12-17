@@ -45,7 +45,7 @@ public class OrderApi {
         return orderResponse;
     }
     @RequestMapping(method = RequestMethod.PATCH , consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void deleteDetails(@RequestBody OrderDto orderDto, HttpServletRequest request) {
+    public void updateOrder(@RequestBody OrderDto orderDto, HttpServletRequest request) {
         // Creamos transaccion para la operación.
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
