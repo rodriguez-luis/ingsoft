@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.CityDao">
+    <insert id="create" parameterType="bo.ucb.edu.ingsoft.model.Cart">
+        INSERT INTO cart VALUES (
+                                      null, #{username}, #{cart_status}, #{status}, #{txId}, #{txHost}, #{txUserId}, #{txDate}, #{status}
+                                  )
+    </insert>
+    <select id="findByUser" parameterType="string" resultType="bo.ucb.edu.ingsoft.model.Cart">
+        SELECT
+            cart_id as cartId,
+            username as username,
+            cart_status as cartStatus
+        FROM cart
+        WHERE
+            username = #{user} and status = 1 and cart_status = 1
+    </select>
+    <update id="update" parameterType="int">
+        UPDATE `cart`
+        SET `cart_status` = 2
+        WHERE cart_id = #{id}
+    </update>
+</mapper>
