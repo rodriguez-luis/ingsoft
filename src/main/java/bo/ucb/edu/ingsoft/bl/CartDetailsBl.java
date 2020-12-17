@@ -7,10 +7,11 @@ import bo.ucb.edu.ingsoft.dto.ProductDto;
 import bo.ucb.edu.ingsoft.model.CartDetails;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Service
 public class CartDetailsBl {
     private TransactionDao transactionDao;
     private CartDetailsDao cartDetailsDao;
