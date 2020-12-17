@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.OrderDao">
+    <select id="getDetails" parameterType="int" resultType="bo.ucb.edu.ingsoft.model.Order">
+        SELECT
+            order_id as orderId,
+            date as date,
+            total as total,
+            address as address,
+            cart_id as cartId,
+            username as username,
+            delivery_boy as deliveryBoy,
+            order_status as orderStatus
+        FROM order
+        WHERE
+            order_id = #{orderId} and status != 0
+    </select>
+    <insert id="create" parameterType="bo.ucb.edu.ingsoft.model.Order">
+        INSERT INTO order VALUES (null, #{orderId}, #{date}, #{total}, #{address}, #{cartId}, #{username}, #{deliveryBoy}, #{orderStatus}, #{txId}, #{txHost}, #{txUserId}, #{txDate})
+    </insert>
+    <update id="update" parameterType="bo.ucb.edu.ingsoft.model.CartDetails">
+        UPDATE `order`
+        SET order_status=#{orderStatus}, delivery_boy = #{deliveryBoy},tx_id = #{txId}, tx_host = #{txHost}, tx_user_id = #{txUserId}, tx_date = #{txDate}
+        WHERE order_id = #{orderId}
+    </update>
+</mapper>
