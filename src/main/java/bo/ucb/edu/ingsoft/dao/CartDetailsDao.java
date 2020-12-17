@@ -8,4 +8,5 @@ import java.util.List;
 public interface CartDetailsDao {
     public void create(CartDetails cartDetails);
     public List<CartDetails> getDetails(Integer cartId);
+    public void hide(CartDetails cartDetails);
 }

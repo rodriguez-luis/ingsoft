@@ -54,4 +54,14 @@ public class CartDetailsBl {
         cartDetailsDto.setDetailsId(getLastId);
         return cartDetailsDto;
     }
+    public void hideDetails(Integer id, Transaction transaction){
+        CartDetails cartDetails = new CartDetails();
+        cartDetails.setDetailsId(id);
+        cartDetails.setTxId(transaction.getTxId());
+        cartDetails.setTxUserId(transaction.getTxUserId());
+        cartDetails.setTxHost(transaction.getTxHost());
+        cartDetails.setTxDate(transaction.getTxDate());
+        cartDetails.setStatus(0);
+        cartDetailsDao.hide(cartDetails);
+    }
 }

@@ -12,9 +12,14 @@
             price as price
         FROM cart_details
         WHERE
-            cart_id = #{cartId}
+            cart_id = #{cartId} and status != 0
     </select>
     <insert id="create" parameterType="bo.ucb.edu.ingsoft.model.CartDetails">
         INSERT INTO cart_details VALUES (null, #{productId}, #{cartId}, #{quantity}, #{price}, #{status}, #{txId}, #{txHost}, #{txUserId}, #{txDate})
     </insert>
+    <update id="hide" parameterType="bo.ucb.edu.ingsoft.model.CartDetails">
+        UPDATE `cart_details`
+        SET status=#{status}, tx_id = #{txId}, tx_host = #{txHost}, tx_user_id = #{txUserId}, tx_date = #{txDate}
+        WHERE details_id = #{detailsId}
+    </update>
 </mapper>

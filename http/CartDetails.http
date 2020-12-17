@@ -13,3 +13,7 @@ Content-Type: application/json
 }
 
 ###
+
+PATCH http://localhost:8080/v1/cart/details/10
+
+

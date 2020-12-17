@@ -42,4 +42,11 @@ public class CartDetailsApi {
         CartDetailsDto detailsResponse = cartDetailsBl.createDetails(cartDetailsDto, transaction);
         return detailsResponse;
     }
+    @RequestMapping(value = "/{id}",method = RequestMethod.PATCH)
+    public void deleteDetails(@PathVariable Integer id, HttpServletRequest request) {
+        // Creamos transaccion para la operación.
+        Transaction transaction = TransactionUtil.createTransaction(request);
+        transactionBl.createTransaction(transaction);
+        cartDetailsBl.hideDetails(id, transaction);
+    }
 }
