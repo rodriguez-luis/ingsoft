@@ -9,7 +9,7 @@ public class CartDto {
     private String username;
     private Integer cartStatus;
 
-    public CartDto(Transaction transaction) {
+    public CartDto() {
     }
 
     public Integer getCartId() {

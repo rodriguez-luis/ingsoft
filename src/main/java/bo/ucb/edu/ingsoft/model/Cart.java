@@ -9,7 +9,7 @@ public class Cart {
     private Integer status;
     private Transaction transaction;
 
-    public Cart(Transaction transaction) {
+    public Cart() {
         this.transaction= new Transaction();
     }
 
