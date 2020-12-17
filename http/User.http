@@ -6,12 +6,12 @@ POST http://localhost:8080/v1/user
 Content-Type: application/json
 
 {
-  "username": "luisito",
+  "username": "luisito2",
   "password": "12345",
   "firstName": "Luis",
   "lastName": "Rodriguez",
   "email": "example@gmail.com",
-  "privilege": 1
+  "privilege": 3
 }
 
 ###
