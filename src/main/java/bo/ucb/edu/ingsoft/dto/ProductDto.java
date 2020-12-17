@@ -13,7 +13,7 @@ public class ProductDto {
     private Double weight;
     private Double unitPrice;
     private Integer currency;
-    private Integer brand;
+    private String brand;
 
     public java.lang.String getImg() {
         return img;
@@ -88,11 +88,11 @@ public class ProductDto {
         this.unitPrice = unitPrice;
     }
 
-    public Integer getBrand() {
+    public String getBrand() {
         return brand;
     }
 
-    public void setBrand(Integer brand) {
+    public void setBrand(String brand) {
         this.brand = brand;
     }
 }

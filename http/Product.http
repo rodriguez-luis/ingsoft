@@ -1,0 +1,27 @@
+GET http://localhost:8080/v1/product
+Accept: application/json
+
+###########
+GET http://localhost:8080/v1/product/1
+Accept: application/json
+
+###########
+
+POST http://localhost:8080/v1/product
+Accept: application/json
+Content-Type: application/json
+
+{
+  "productName": "Procesador",
+  "model": "I5 9400",
+  "productDescription": "Intel I5 novena generacion",
+  "stock": 5,
+  "weight": 5.5,
+  "unitPrice": 1000,
+  "currency": 1,
+  "brand": "Marca Patito",
+  "img": "https://www.efecto2000.es/458535-large_default_2x/micro-intel-core-i5-9400-2-90-4-10ghz-lga1151-9-gen-c-ventilador-box.jpg"
+}
+###########
+
+

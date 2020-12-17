@@ -34,6 +34,7 @@ public class ProductBl {
         productDto.setUnitPrice(product.getUnitPrice());
         productDto.setCurrency(product.getCurrency());
         productDto.setImg(product.getImg());
+        productDto.setBrand(product.getBrand());
         return productDto;
     }
     public List<ProductDto> selectProducts(){
@@ -51,6 +52,7 @@ public class ProductBl {
             productDto.setUnitPrice(product.getUnitPrice());
             productDto.setCurrency(product.getCurrency());
             productDto.setImg(product.getImg());
+            productDto.setBrand(product.getBrand());
             productsDto.add(i,productDto);
         }
         return productsDto;
@@ -70,6 +72,7 @@ public class ProductBl {
         product.setTxHost(transaction.getTxHost());
         product.setTxDate(transaction.getTxDate());
         product.setStatus(1);
+        product.setBrand(productDto.getBrand());
         productDao.create(product);
         Integer getLastId = transactionDao.getLastInsertId();
         productDto.setProductId(getLastId);

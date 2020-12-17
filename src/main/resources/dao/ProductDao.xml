@@ -11,7 +11,7 @@
             product_description as productDescription,
             stock as stock,
             weight as weight,
-            price_per_unit as unitPrice,
+            unit_price as unitPrice,
             currency as currency,
             brand as brand,
             img as img
@@ -30,7 +30,7 @@
             product_description as productDescription,
             stock as stock,
             weight as weight,
-            price_per_unit as unitPrice,
+            unit_price as unitPrice,
             currency as currency,
             brand as brand,
             img as img
