@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="bo.ucb.edu.ingsoft.dao.CityDao">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.CartDao">
     <insert id="create" parameterType="bo.ucb.edu.ingsoft.model.Cart">
         INSERT INTO cart VALUES (
-                                      null, #{username}, #{cart_status}, #{status}, #{txId}, #{txHost}, #{txUserId}, #{txDate}, #{status}
+                                      null, #{username}, #{cartStatus}, #{status}, #{txId}, #{txHost}, #{txUserId}, #{txDate}
                                   )
     </insert>
     <select id="findByUser" parameterType="string" resultType="bo.ucb.edu.ingsoft.model.Cart">
@@ -19,7 +19,7 @@
     </select>
     <update id="update" parameterType="bo.ucb.edu.ingsoft.model.Cart">
         UPDATE `cart`
-        SET `cart_status` = 2, tx_id = #{txId}, tx_host = #{txHost}, tx_user_id = #{txUserId}, tx_date = #{txDate}
-        WHERE cart_id = #{id}
+        SET `cart_status` = #{cartStatus}
+        WHERE username = #{username}
     </update>
 </mapper>

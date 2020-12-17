@@ -9,7 +9,9 @@ import bo.ucb.edu.ingsoft.model.Cart;
 import bo.ucb.edu.ingsoft.model.Product;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CartBl {
     private TransactionDao transactionDao;
     private CartDao cartDao;
@@ -19,24 +21,36 @@ public class CartBl {
         this.cartDao = cartDao;
     }
     public CartDto create(CartDto cartDto, Transaction transaction) {
+        updateCart(cartDto.getUsername(),transaction);
         Cart cart = new Cart();
         cart.setUsername(cartDto.getUsername());
         cart.setCartStatus(1);
         cart.setStatus(1);
+        cart.setTxId(transaction.getTxId());
+        cart.setTxHost(transaction.getTxHost());
+        cart.setTxUserId(transaction.getTxUserId());
+        cart.setTxDate(transaction.getTxDate());
         cartDao.create(cart);
         Integer getLastId = transactionDao.getLastInsertId();
         cartDto.setCartId(getLastId);
         return cartDto;
     }
     public CartDto getCart(String username){
-        Cart cart = cartDao.getByUser(username);
+        Cart cart = cartDao.findByUser(username);
         CartDto cartDto = new CartDto();
         cartDto.setCartId(cart.getCartId());
         cartDto.setUsername(cart.getUsername());
         cartDto.setCartStatus(cart.getCartStatus());
         return cartDto;
     }
-    public void updateCart(Integer id, Transaction transaction){
-        cartDao.update(id);
+    public void updateCart(String user, Transaction transaction){
+        Cart cart = new Cart();
+        cart.setUsername(user);
+        cart.setCartStatus(2);
+        cart.setTxId(transaction.getTxId());
+        cart.setTxHost(transaction.getTxHost());
+        cart.setTxUserId(transaction.getTxUserId());
+        cart.setTxDate(transaction.getTxDate());
+        cartDao.update(cart);
     }
 }
