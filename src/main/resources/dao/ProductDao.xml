@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.ProductDao">
+    <select id="findByProductId" parameterType="int" resultType="bo.ucb.edu.ingsoft.model.Product">
+        SELECT
+            product_id as productId,
+            product_name as productName,
+            model as model,
+            product_description as productDescription,
+            stock as stock,
+            weight as weight,
+            price_per_unit as unitPrice,
+            currency as currency,
+            brand as brand,
+            img as img
+        FROM product
+        WHERE
+            product_id = #{productId}
+    </select>
+    <insert id="create" parameterType="bo.ucb.edu.ingsoft.model.Product">
+        INSERT INTO product VALUES (null, #{productName}, #{model}, #{productDescription}, #{stock}, #{weight}, #{unitPrice}, #{currency}, #{txId}, #{txHost}, #{txUserId}, #{txDate},#{status},#{brand}, #{img} )
+    </insert>
+    <select id="getProducts" resultType="bo.ucb.edu.ingsoft.model.Product">
+        SELECT
+            product_id as productId,
+            product_name as productName,
+            model as model,
+            product_description as productDescription,
+            stock as stock,
+            weight as weight,
+            price_per_unit as unitPrice,
+            currency as currency,
+            brand as brand,
+            img as img
+        FROM product
+        WHERE
+            status = 1
+    </select>
+</mapper>
