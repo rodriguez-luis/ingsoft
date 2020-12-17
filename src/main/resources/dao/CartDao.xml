@@ -17,9 +17,9 @@
         WHERE
             username = #{user} and status = 1 and cart_status = 1
     </select>
-    <update id="update" parameterType="int">
+    <update id="update" parameterType="bo.ucb.edu.ingsoft.model.Cart">
         UPDATE `cart`
-        SET `cart_status` = 2
+        SET `cart_status` = 2, tx_id = #{txId}, tx_host = #{txHost}, tx_user_id = #{txUserId}, tx_date = #{txDate}
         WHERE cart_id = #{id}
     </update>
 </mapper>

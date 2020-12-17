@@ -18,7 +18,7 @@ public class CartBl {
         this.transactionDao = transactionDao;
         this.cartDao = cartDao;
     }
-    public CartDto createProduct(CartDto cartDto, Transaction transaction) {
+    public CartDto create(CartDto cartDto, Transaction transaction) {
         Cart cart = new Cart();
         cart.setUsername(cartDto.getUsername());
         cart.setCartStatus(1);
@@ -36,7 +36,7 @@ public class CartBl {
         cartDto.setCartStatus(cart.getCartStatus());
         return cartDto;
     }
-    public void updateCart(Integer id){
+    public void updateCart(Integer id, Transaction transaction){
         cartDao.update(id);
     }
 }
